@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Difusores Londrina | Difusores e Acessórios</title>
+  <meta name="description" content="Difusores esportivos, ponteiras, abafadores e acessórios automotivos. Londrina e região. Instalação e personalização. WhatsApp: 43 9 9109-3271" />
+  <style>
+    :root{
+      --bg:#05070a;
+      --card:#0b0f14;
+      --muted:#9fb0c2;
+      --text:#eef6ff;
+      --brand:#35d04a;
+      --brand2:#ff3b3b;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(53,208,74,.15), transparent 60%),
+        radial-gradient(900px 600px at 80% 0%, rgba(255,59,59,.12), transparent 60%),
+        radial-gradient(900px 700px at 60% 120%, rgba(80,160,255,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+
+    /* Topbar */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(5,7,10,.55);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:220px;
+    }
+    .logo{
+      width:52px; height:52px; border-radius:14px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      background:#111;
+    }
+    .brand h1{font-size:16px; margin:0; line-height:1.1}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+    nav{
+      display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    nav a{
+      font-size:13px; color:rgba(255,255,255,.85);
+      padding:9px 10px; border-radius:12px;
+      border:1px solid transparent;
+      transition:.2s;
+    }
+    nav a:hover{border-color:var(--line); background:rgba(255,255,255,.04)}
+    .ctaRow{display:flex; gap:10px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:11px 14px;
+      border-radius:14px; border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      transition:.2s; cursor:pointer;
+      font-weight:650; font-size:13px;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.07)}
+    .btn.primary{
+      border-color:rgba(53,208,74,.35);
+      background: linear-gradient(90deg, rgba(53,208,74,.22), rgba(255,59,59,.10));
+    }
+    .pill{
+      font-size:12px; color:rgba(255,255,255,.9);
+      padding:7px 10px; border-radius:999px;
+      border:1px solid rgba(53,208,74,.25);
+      background: rgba(53,208,74,.08);
+    }
+
+    /* Hero */
+    .hero{
+      padding:44px 0 18px;
+    }
+    .heroGrid{
+      display:grid; grid-template-columns: 1.2fr .8fr;
+      gap:18px; align-items:stretch;
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow:hidden;
+      position:relative;
+    }
+    .heroMain{
+      padding:26px;
+      min-height:260px;
+    }
+    .kicker{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:10px}
+    .heroTitle{
+      font-size:40px; line-height:1.05; margin:10px 0 10px;
+      letter-spacing:-0.02em;
+    }
+    .heroTitle b{color:var(--brand)}
+    .heroText{color:var(--muted); font-size:15px; line-height:1.6; max-width:60ch}
+    .heroActions{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .heroMini{
+      display:grid; grid-template-rows:auto 1fr;
+    }
+    .miniTop{padding:18px 18px 0}
+    .miniTop h3{margin:0;font-size:15px}
+    .miniTop p{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .miniBox{
+      padding:18px;
+      display:grid; gap:10px;
+    }
+    .miniItem{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px;
+      background:rgba(0,0,0,.25);
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .miniItem span{color:var(--muted); font-size:12px}
+    .miniItem strong{font-size:13px}
+
+    /* Search / filters */
+    .toolbar{
+      margin:18px 0 8px;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    }
+    .search{
+      flex:1; min-width:220px;
+      display:flex; gap:10px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:10px 12px;
+      align-items:center;
+    }
+    .search input{
+      border:none; outline:none; background:transparent;
+      color:var(--text);
+      width:100%;
+      font-size:14px;
+    }
+    .filters{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:rgba(255,255,255,.85);
+      padding:9px 11px;
+      border-radius:999px;
+      font-size:13px;
+      cursor:pointer;
+      transition:.15s;
+      user-select:none;
+    }
+    .chip.active{
+      border-color: rgba(53,208,74,.35);
+      background: rgba(53,208,74,.10);
+    }
+
+    /* Sections */
+    section{padding:28px 0}
+    .sectionTitle{
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:12px; flex-wrap:wrap; margin-bottom:12px;
+    }
+    .sectionTitle h2{margin:0;font-size:20px}
+    .sectionTitle p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Product grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      transition:.2s;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .card:hover{transform: translateY(-2px); background: rgba(255,255,255,.05)}
+    .thumb{
+      height:150px;
+      background:
+        radial-gradient(500px 200px at 20% 0%, rgba(53,208,74,.18), transparent 60%),
+        radial-gradient(500px 200px at 80% 0%, rgba(255,59,59,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.15));
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:flex-end; justify-content:space-between;
+      padding:12px;
+    }
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.35);
+      color:rgba(255,255,255,.9);
+    }
+    .price{
+      font-weight:800;
+      font-size:14px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(53,208,74,.25);
+      background: rgba(53,208,74,.10);
+    }
+    .content{padding:14px}
+    .content h3{margin:0 0 6px; font-size:15px}
+    .content p{margin:0 0 12px; color:var(--muted); font-size:13px; line-height:1.5}
+    .cardActions{display:flex; gap:10px; flex-wrap:wrap}
+    .smallBtn{
+      flex:1;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      font-weight:700; font-size:13px;
+      cursor:pointer;
+      transition:.15s;
+    }
+    .smallBtn:hover{background:rgba(255,255,255,.06)}
+    .smallBtn.primary{
+      border-color: rgba(53,208,74,.35);
+      background: rgba(53,208,74,.10);
+    }
+
+    /* Services / about */
+    .twoCol{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+    }
+    .infoBox{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      padding:18px;
+    }
+    .infoBox h3{margin:0 0 8px; font-size:16px}
+    .infoBox ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
+    .infoBox p{margin:0; color:var(--muted); line-height:1.7}
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--line);
+      padding:18px 0 26px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footerGrid{
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* WhatsApp floating */
+    .wppFloat{
+      position:fixed; right:16px; bottom:16px; z-index:60;
+      display:flex; gap:10px; align-items:center;
+      padding:12px 14px;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(53,208,74,.22), rgba(53,208,74,.10));
+      border:1px solid rgba(53,208,74,.35);
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      font-weight:800;
+    }
+    .wppFloat small{display:block;font-weight:600;color:rgba(255,255,255,.85)}
+    .wppDot{
+      width:12px;height:12px;border-radius:50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(53,208,74,.18);
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .heroGrid{grid-template-columns:1fr}
+      .grid{grid-template-columns: repeat(2, 1fr)}
+      .twoCol{grid-template-columns:1fr}
+      .heroTitle{font-size:34px}
+    }
+    @media (max-width: 560px){
+      nav{display:none}
+      .grid{grid-template-columns:1fr}
+      .heroTitle{font-size:30px}
+      .brand{min-width:auto}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <!-- Coloque sua imagem e renomeie para logo.jpg, ou troque o src -->
+        <img class="logo" src="logo.jpg" alt="Logo Difusores Londrina" />
+        <div>
+          <h1>Difusores Londrina</h1>
+          <p>Difusores • Ponteiras • Acessórios • Instalação</p>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="ctaRow">
+        <span class="pill">📍 Londrina / PR</span>
+        <a class="btn primary" id="btnWppTop" href="#" target="_blank" rel="noopener">💬 Orçar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="inicio" class="wrap">
+
+  <div class="hero">
+    <div class="heroGrid">
+      <div class="heroCard heroMain">
+        <div class="kicker">
+          <span class="pill">🔥 Som esportivo</span>
+          <span class="pill">⚙️ Instalação rápida</span>
+          <span class="pill">✅ Peças selecionadas</span>
+        </div>
+
+        <h2 class="heroTitle">
+          Difusores e acessórios <br/>
+          pra deixar seu carro <b>insano</b>.
+        </h2>
+
+        <p class="heroText">
+          Aqui você encontra difusores esportivos, ponteiras, abafadores e acessórios automotivos.
+          Atendimento direto no WhatsApp e pedidos sob medida.
+        </p>
+
+        <div class="heroActions">
+          <a class="btn primary" href="#produtos">🛒 Ver catálogo</a>
+          <a class="btn" id="btnInsta" href="#" target="_blank" rel="noopener">📸 Instagram</a>
+          <a class="btn" href="#contato">📞 Contato</a>
+        </div>
+      </div>
+
+      <div class="heroCard heroMini">
+        <div class="miniTop">
+          <h3>Atendimento</h3>
+          <p>Chame no WhatsApp e peça seu orçamento.</p>
+        </div>
+        <div class="miniBox">
+          <div class="miniItem">
+            <div>
+              <strong>WhatsApp</strong>
+              <span>Resposta rápida</span>
+            </div>
+            <div class="pill">✅</div>
+          </div>
+          <div class="miniItem">
+            <div>
+              <strong>Entrega / Retirada</strong>
+              <span>Combine pelo chat</span>
+            </div>
+            <div class="pill">🚚</div>
+          </div>
+          <div class="miniItem">
+            <div>
+              <strong>Personalização</strong>
+              <span>Modelos e medidas</span>
+            </div>
+            <div class="pill">🛠️</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="search" role="search">
+        🔎
+        <input id="q" type="search" placeholder="Buscar: difusor, ponteira, abafador, kit..." autocomplete="off" />
+      </div>
+      <div class="filters" aria-label="Filtros">
+        <div class="chip active" data-filter="all">Tudo</div>
+        <div class="chip" data-filter="difusor">Difusores</div>
+        <div class="chip" data-filter="acessorio">Acessórios</div>
+        <div class="chip" data-filter="kit">Kits</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="produtos">
+    <div class="sectionTitle">
+      <div>
+        <h2>Catálogo</h2>
+        <p>Cards de exemplo — você pode editar nomes/preços e adicionar fotos.</p>
+      </div>
+      <a class="btn" href="#contato">📦 Pedir orçamento</a>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="servicos">
+    <div class="sectionTitle">
+      <div>
+        <h2>Serviços</h2>
+        <p>Trabalho limpo, acabamento top e orientação na escolha.</p>
+      </div>
+    </div>
+
+    <div class="twoCol">
+      <div class="infoBox">
+        <h3>Instalação & Ajustes</h3>
+        <ul>
+          <li>Instalação de difusor e ponteira</li>
+          <li>Ajuste de encaixe / alinhamento</li>
+          <li>Verificação de folgas e acabamento</li>
+          <li>Reforço e fixação segura</li>
+        </ul>
+      </div>
+
+      <div class="infoBox">
+        <h3>Personalização</h3>
+        <ul>
+          <li>Modelos sob medida (consulte)</li>
+          <li>Pintura e acabamento (consulte)</li>
+          <li>Kits completos pra estética traseira</li>
+          <li>Recomendação por carro/ano</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="sectionTitle">
+      <div>
+        <h2>Sobre</h2>
+        <p>Uma loja focada em visual esportivo e peças bem escolhidas.</p>
+      </div>
+    </div>
+
+    <div class="infoBox">
+      <p>
+        A <b>Difusores Londrina</b> trabalha com difusores esportivos e acessórios automotivos,
+        ajudando você a escolher o modelo ideal pro seu carro e oferecendo atendimento rápido.
+        Quer algo específico? Manda foto do seu carro e a gente orienta.
+      </p>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="sectionTitle">
+      <div>
+        <h2>Contato</h2>
+        <p>Chama no WhatsApp ou no Instagram.</p>
+      </div>
+    </div>
+
+    <div class="twoCol">
+      <div class="infoBox">
+        <h3>WhatsApp</h3>
+        <p><b>+55 (43) 99109-3271</b></p>
+        <p style="margin-top:10px">
+          <a class="btn primary" id="btnWpp" href="#" target="_blank" rel="noopener">💬 Falar agora</a>
+        </p>
+        <p style="margin-top:10px;color:var(--muted);font-size:13px">
+          Dica: mande <b>modelo/ano</b> do carro e uma foto da traseira pra agilizar.
+        </p>
+      </div>
+
+      <div class="infoBox">
+        <h3>Instagram</h3>
+        <p><b>@DifusoresLondrina</b></p>
+        <p style="margin-top:10px">
+          <a class="btn" id="btnInsta2" href="#" target="_blank" rel="noopener">📸 Ver perfil</a>
+        </p>
+        <p style="margin-top:10px;color:var(--muted);font-size:13px">
+          Poste seus trabalhos, antes/depois e preços de referência (ajuda a vender mais).
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footerGrid">
+      <div>© <span id="year"></span> Difusores Londrina — Todos os direitos reservados.</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#inicio">⬆️ Voltar ao topo</a>
+        <a class="btn" id="btnWppFooter" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a class="wppFloat" id="wppFloat" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <span class="wppDot" aria-hidden="true"></span>
+  <div>
+    WhatsApp
+    <small>Orçamento rápido</small>
+  </div>
+</a>
+
+<script>
+  // ====== CONFIG (edite aqui) ======
+  const WHATSAPP_NUMBER = "5543991093271"; // +55 43 99109-3271 (sem espaços)
+  const INSTAGRAM_USER = "DifusoresLondrina"; // @DifusoresLondrina
+  const DEFAULT_MSG = "Olá! Quero orçamento. Meu carro é (modelo/ano): ...";
+
+  // Produtos (edite à vontade)
+  const PRODUCTS = [
+    { id: 1, type:"difusor", name:"Difusor Esportivo Universal", desc:"Visual agressivo, encaixe universal. Consulte compatibilidade.", price:"Sob consulta" },
+    { id: 2, type:"difusor", name:"Difusor Traseiro Modelo Racing", desc:"Estilo racing com acabamento premium.", price:"Sob consulta" },
+    { id: 3, type:"acessorio", name:"Ponteira Cromada", desc:"Ponteira com acabamento brilhante. Várias medidas.", price:"Sob consulta" },
+    { id: 4, type:"acessorio", name:"Ponteira Black", desc:"Visual black para carros esportivos.", price:"Sob consulta" },
+    { id: 5, type:"acessorio", name:"Abafador Esportivo", desc:"Melhora o som e o visual. Opções por medida.", price:"Sob consulta" },
+    { id: 6, type:"kit", name:"Kit Difusor + Ponteira", desc:"Combo para transformar a traseira do carro.", price:"Sob consulta" },
+    { id: 7, type:"kit", name:"Kit Estética Traseira Completa", desc:"Difusor + ponteira + ajustes (consulte).", price:"Sob consulta" },
+    { id: 8, type:"acessorio", name:"Fixadores / Suportes", desc:"Itens de instalação e acabamento.", price:"Sob consulta" },
+    { id: 9, type:"difusor", name:"Difusor Linha Premium", desc:"Acabamento superior e presença forte.", price:"Sob consulta" }
+  ];
+
+  // ====== Helpers ======
+  const wppLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg || DEFAULT_MSG)}`;
+  const instaLink = () => `https://instagram.com/${INSTAGRAM_USER}`;
+
+  // Buttons
+  const btnsWpp = ["btnWpp","btnWppTop","btnWppFooter","wppFloat"];
+  btnsWpp.forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.href = wppLink();
+  });
+  const instaBtns = ["btnInsta","btnInsta2"];
+  instaBtns.forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.href = instaLink();
+  });
+
+  // Render products
+  const grid = document.getElementById("grid");
+  function render(list){
+    grid.innerHTML = list.map(p => `
+      <article class="card" data-type="${p.type}">
+        <div class="thumb">
+          <span class="tag">${labelType(p.type)}</span>
+          <span class="price">${p.price}</span>
+        </div>
+        <div class="content">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <div class="cardActions">
+            <a class="smallBtn" href="#contato">Ver detalhes</a>
+            <a class="smallBtn primary" target="_blank" rel="noopener"
+               href="${wppLink(`Olá! Quero orçamento do produto: ${p.name}. Meu carro é (modelo/ano): ...`)}">
+               Orçar no WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+    `).join("");
+  }
+  function labelType(t){
+    if(t==="difusor") return "Difusor";
+    if(t==="acessorio") return "Acessório";
+    if(t==="kit") return "Kit";
+    return "Item";
+  }
+  render(PRODUCTS);
+
+  // Filter + search
+  const chips = [...document.querySelectorAll(".chip")];
+  let active = "all";
+  chips.forEach(c => c.addEventListener("click", () => {
+    chips.forEach(x=>x.classList.remove("active"));
+    c.classList.add("active");
+    active = c.dataset.filter;
+    apply();
+  }));
+
+  const q = document.getElementById("q");
+  q.addEventListener("input", apply);
+
+  function apply(){
+    const term = q.value.trim().toLowerCase();
+    const filtered = PRODUCTS.filter(p => {
+      const matchesType = (active==="all") || (p.type===active);
+      const hay = (p.name + " " + p.desc + " " + p.type).toLowerCase();
+      const matchesText = !
